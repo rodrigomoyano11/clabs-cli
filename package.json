@@ -15,7 +15,7 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "tsc --watch",
+    "dev": "npm run build && node dist/index.js",
     "build": "tsc",
     "postbuild": "npx cpy-cli src/templates/** dist/templates"
   },
