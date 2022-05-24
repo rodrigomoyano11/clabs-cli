@@ -1,16 +1,30 @@
 {
   "name": "clabs-cli",
   "version": "1.0.0",
-  "description": "CLI tool for create components, pages, hooks and others templates",
-  "main": "dist/index.js",
-  "scripts": {
-    "start": "tsc --watch",
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "CLI tool that includes project templates, settings and other utilities",
   "author": "rodrigomoyano11",
   "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "bin": {
+    "clabs": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "postbuild": "npx cpy-cli src/templates/** dist/templates"
+  },
   "devDependencies": {
+    "@types/minimist": "^1.2.2",
     "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "minimist": "^1.2.6",
+    "plop": "^3.1.0"
   }
 }
