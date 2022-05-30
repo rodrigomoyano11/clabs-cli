@@ -1,0 +1,18 @@
+import { {{pascalCase name}}GlobalStyles, {{pascalCase name}}LocalStyles } from './{{camelCase name}}.styles'
+
+export type {{pascalCase name}}ComponentProps = {
+  children: React.ReactNode
+}
+
+export const {{pascalCase name}}Component = ({ children }: {{pascalCase name}}ComponentProps) => (
+  <div style={{{withTwoBraces "'--color': 'white'" true}}}>
+    <div className="box">
+      <p>{children}</p>
+    </div>
+
+    <style jsx>{{{withOneBrace (concat (pascalCase name) "LocalStyles" ) false}}}</style>
+    <style jsx global>
+      {{{withOneBrace (concat (pascalCase name) "GlobalStyles" ) false}}}
+    </style>
+  </div>
+)
