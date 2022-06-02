@@ -19,7 +19,7 @@ const component: PlopGeneratorConfig = {
       type: 'input',
       name: 'path',
       message: '2. Ingrese la ruta donde desea crearlo:',
-      default: 'src/components',
+      default: 'components/molecules',
       validate: (value: string) => {
         if (/.+/.test(value)) return true
 
